@@ -15,15 +15,6 @@ def commit_new_file(repo, name, message="test commit"):
     repo.index.commit(message)
 
 
-def test_get_name_from_tag_path():
-    assert gitutil.get_name_from_tag_path("refs/tags/test") == "test"
-
-
-def test_get_name_from_tag_path_invalid_input():
-    with pytest.raises(AssertionError):
-        gitutil.get_name_from_tag_path("invalid")
-
-
 def test_find_tag(tmpdir):
     repo = setup_git_repo(tmpdir)
     commit_new_file(repo, "first", "Initial Commit")
