@@ -13,7 +13,10 @@ Options:
 
 """
 from docopt import docopt
-from tracker import meta
+try:
+    from tracker import meta
+except Exception:
+    import meta
 
 
 def func(x):
