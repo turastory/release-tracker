@@ -25,4 +25,4 @@ def setup_git_repo(repo_dir):
 def test_find_tag(tmpdir):
     repo = setup_git_repo(tmpdir)
     repo.create_tag("test")
-    assert gitutil.find_tag(tmpdir, "test") == "test"
+    assert gitutil.find_tag(repo, "test") == "test"
