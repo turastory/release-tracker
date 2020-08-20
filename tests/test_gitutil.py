@@ -1,5 +1,4 @@
 import os
-import pytest
 import git
 from tracker import gitutil
 
@@ -21,5 +20,5 @@ def test_find_tag(tmpdir):
     repo.create_tag("test")
     commit_new_file(repo, "second")
     repo.create_tag("abcd")
-    assert gitutil.find_tag(repo, "test") == "test"
-    assert gitutil.find_tag(repo, "a.*") == "abcd"
+    assert gitutil.find_tag(repo, "test").name == "test"
+    assert gitutil.find_tag(repo, "a.*").name == "abcd"

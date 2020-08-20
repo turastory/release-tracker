@@ -9,8 +9,8 @@ def find_tag(repo, pattern):
         pattern (string): regex pattern to match
 
     Returns:
-        string: Name of the first occurred tag that matches `pattern`
+        TagReference: A reference to the first occurred tag
+                      that matches `pattern`
     """
     p = re.compile(pattern)
-    tag_names = map(lambda x: x.name, repo.tags)
-    return next((x for x in tag_names if p.match(x)), None)
+    return next((x for x in repo.tags if p.match(x.name)), None)
