@@ -13,6 +13,7 @@ Options:
 
 """
 from docopt import docopt
+from tracker import meta
 
 
 def func(x):
@@ -20,5 +21,5 @@ def func(x):
 
 
 if __name__ == "__main__":
-    arguments = docopt(__doc__, version="1.0.0")
+    arguments = docopt(__doc__, version=meta.__version__)
     print(arguments)

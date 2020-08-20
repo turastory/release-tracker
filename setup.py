@@ -1,12 +1,19 @@
+import os
 from setuptools import setup, find_packages
+
+
+meta = {}
+basedir = os.path.abspath(os.path.dirname(__file__))
+with open(os.path.join(basedir, "src", "tracker", "meta.py")) as f:
+    exec(f.read(), meta)
 
 setup(
     name="release-tracker",
-    version="1.0.0",
-    description="Simple utility for tracking changes between releases.",
-    author="turastory",
-    author_email="soldier4443@gmail.com",
-    license="MIT",
+    version=meta["__version__"],
+    description=meta["__description__"],
+    author=meta["__author__"],
+    author_email=meta["__email__"],
+    license=meta["__license__"],
     classifiers=[
         "Topic :: Utilities",
         "Topic :: Software Development :: Version Control :: Git",
