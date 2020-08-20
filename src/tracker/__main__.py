@@ -2,14 +2,15 @@
 Test document.
 
 Usage:
-  track <start-tag-name> [<target-tag-name>]
+  track <start> [<target>] [--regex=<regex>] [--dir=<dir>]
   track (-h | --help)
   track --version
 
 Options:
-  -h --help       Show this screen.
-  --version       Show version.
-  --regex=<regex> Regular expression to filter out commits
+  -h --help           Show this screen.
+  --version           Show version.
+  -r, --regex=<regex> Regular expression to filter out commits
+  -d, --dir=<dir>     Target directory.
 
 """
 from docopt import docopt
@@ -17,10 +18,6 @@ try:
     from tracker import meta
 except Exception:
     import meta
-
-
-def func(x):
-    return x + 1
 
 
 if __name__ == "__main__":
