@@ -1,5 +1,15 @@
-Release Tracker V2
+Release Tracker V2 (No future updates)
 ==================
+
+While examining git and gitpython, I noticed that **the desired behavior already exists in Git!**
+Here's a simple example:
+
+```bash
+$ git log HEAD...some/tag/name/3 --oneline --decorated --grep="pattern"
+```
+
+There's no reason to reinvent the wheel, so **I decided not to work on it anymore.**
+
 
 The purpose
 -----------
