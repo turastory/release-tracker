@@ -6,4 +6,4 @@ def filter_regex(strings, pattern):
     using regex with the given pattern.
     """
     p = re.compile(pattern)
-    return list(filter(lambda x: p.match(x), strings))
+    return list(filter(lambda x: p.search(x), strings))

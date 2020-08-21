@@ -6,6 +6,4 @@ def test_filter_regex():
     assert tracker.filter_regex(
             strings, "[a-zA-Z]+") == ["Android10", "iOS"]
     assert tracker.filter_regex(
-            strings, "\\d+") == ["3.141592"]
-    assert tracker.filter_regex(
-            strings, "[A-Z]+|\\d") == ["Android10", "3.141592"]
+            strings, "\\d+") == ["Android10", "3.141592"]
